@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/6d65cab5ac.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="music-player">
+            <nav>
+                <div class="circle" id="music-selector">
+                    <i class="fa-solid fa-angle-left"></i>
+                    <div class="dropdown-content">
+                        <button onclick="selectSong(0)">Мой мармеладный</button>
+                        <button onclick="selectSong(1)">Happy</button>
+                        <button onclick="selectSong(2)">Pagode Russo</button>
+                        <button onclick="selectSong(3)">Cheri Cheri Lady</button>
+
+                        <button onclick="selectSong(songs.length - 1)">Sua Música</button>
+                    </div>
+                </div>
+
+            </nav>
+            <img src="imagem/Imagem padrão.jpg" class="song-img">
+            <h1 id="current-song-title">Мой мармеладный</h1>
+            <p id="current-artist">Katya Lel'</p>
+
+            <audio id="song">
+                <source src="song/Катя Лель - Мой мармеладный (slowed).mp3" type="audio/mpeg">
+                <source src="song/Pharrell Williams - Happy (Video).mp3" type="audio/mpeg">
+                <source src="song/Pagode Russo.mp3" type="audio/mpeg">
+                <source src="song/Modern Talking - Cheri Cheri Lady (Official Music Video).mp3" type="audio/mpeg">
+            </audio>
+            <input type="range" value="0" id="progress">
+            <input type="file" id="fileInput" accept=".mp3">
+            <button onclick="addCustomSong()">Adicionar Música</button>
+
+            <div class="timer">
+                <span id="currentTime">0:00</span>  <span id="totalTime">0:00</span>
+            </div>
+         
+
+
+
+            <div class="controls">
+                <div><i class="fa-solid fa-backward" onclick="prevSong()"></i></div>
+                <div onclick="playPause()"><i class="fa-solid fa-play" id="ctrlicon"></i></div>
+                <div><i class="fa-solid fa-forward" onclick="nextSong()"></i></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    
